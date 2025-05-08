@@ -46,7 +46,17 @@ Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64)   Oct  8 2022 05:58:25   Cop
 `SELECT name, recovery_model_desc FROM sys.databases;`
 
 **Result:**  
-_Paste or summarize the output here_
+master- Simple  
+tempdb- Simple  
+model- Full  
+msdb- Simple  
+
+**Recovery Types**  
+Recovery models control how SQL Server handles transaction logs, defining how much data can be recovered after a failure, and what kind of backups are possible.
+
+**Simple**- Some changes are logged, but log file is truncated. Only full and differential backups, no t-log backups.  
+**Full**- Every change is fully logged, can restore any point in time. Requires regular full, differential and t-log backups.    
+**Bulk Logged**- Like Full, but certain operations (bulk inserts, index rebuilds) are minimally logged for better performance. Transaction log backups still possible, but point-in-time recovery is limited.
 
 ---
 
@@ -62,7 +72,8 @@ _Paste or summarize the output here_
 - Ran SELECT * to verify data
 
 **Query Result:**  
-_Paste result or describe the output_
+ID = 1
+Message = "Hello, SQL Server!"
 
 ---
 
@@ -72,15 +83,18 @@ _Paste result or describe the output_
 `SELECT cpu_count, physical_memory_kb / 1024 AS Memory_MB FROM sys.dm_os_sys_info;`
 
 **Result:**  
-_Paste the output here_
+cpu_count = 4  
+Memory_MB = 8170  
+(SQL_CPU_Memory.png)
 
 ---
 
 ## 📸 Screenshots
 
-1. SQL Server version query result (`@@VERSION`)  
-2. Recovery models query result (`sys.databases`)  
-3. `SELECT * FROM HelloWorld` result
+1. SQL_Version.png- SQL Server version query result (`@@VERSION`)  
+2. SQL_Recovery.png- Recovery models query result (`sys.databases`)
+3. SQL_CPU_Memory.png- Hardware specs query result (`sys.dm_os_sys_info`)
+4. SQL_SELECT.png- `SELECT * FROM HelloWorld` result
 
 
 
@@ -88,8 +102,24 @@ _Paste the output here_
 
 ## 📝 Notes & Reflections
 
-- Your thoughts about learning SQL Server so far  
-- Anything interesting or challenging you encountered
+## 📝 Notes & Reflections
+
+This week, I set up my SQL Server environment and connected using SQL Server Management Studio (SSMS) for the first time. I explored the system databases (master, model, msdb, tempdb) and learned their different roles in managing the SQL Server instance.
+
+I ran my first T-SQL queries to:
+- Check the SQL Server version.
+- List all existing databases and their recovery models.
+- View the server’s CPU and memory resources.
+
+Then I created my first database (`TestDB`) and table (`HelloWorld`). I inserted data into the table and successfully queried it, which helped me understand how SQL Server stores and retrieves data.
+
+Key takeaways:
+- System databases each have specific roles and are essential for SQL Server’s operation.
+- The recovery model of a database determines what kinds of backups and restores are possible.
+- Using the `IDENTITY` and `PRIMARY KEY` constraints simplifies managing unique row identifiers.
+- SSMS makes it easy to run queries, create databases, and browse data.
+
+At first, opening a query window and writing SQL felt unfamiliar, but after running a few commands, I became more comfortable. The ability to create databases and tables using scripts was a big milestone. I now feel more confident working with SQL Server and look forward to diving deeper in Week 2!
 
 ---
 
