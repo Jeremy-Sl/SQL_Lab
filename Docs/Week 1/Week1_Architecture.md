@@ -102,8 +102,6 @@ Memory_MB = 8170
 
 ## 📝 Notes & Reflections
 
-## 📝 Notes & Reflections
-
 This week, I set up my SQL Server environment and connected using SQL Server Management Studio (SSMS) for the first time. I explored the system databases (master, model, msdb, tempdb) and learned their different roles in managing the SQL Server instance.
 
 I ran my first T-SQL queries to:
