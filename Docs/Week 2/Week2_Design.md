@@ -93,7 +93,16 @@ Key takeaways:
 - JOIN queries are essential for retrieving related data across tables.
 - Writing T-SQL queries for data retrieval became more comfortable with practice.
 
-I encountered minor challenges understanding JOIN syntax at first, but working through examples helped clarify how LEFT JOIN and GROUP BY work together to summarize data.
+I also learned about the Logical Processing Order of an SQL query, and how it affects aliases being declared:
+
+|Step	| Clause|  
+|-----|-------|
+|1 | FROM and JOIN (aliases declared here)|  
+|2 | WHERE|  
+|3 | GROUP BY|  
+|4 | HAVING|  
+|5 | SELECT|  
+|6 | ORDER BY|  
 
 ---
 
