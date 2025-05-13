@@ -55,31 +55,29 @@
 - SELECT all servers  
 - SELECT all maintenance records
 
-**Join Query**  
+**Join Queries**  
 - List all servers with their latest maintenance date using a LEFT JOIN and GROUP BY.
+- List all servers with maintenance records using INNER JOIN
+- List all servers without maintenance using LEFT JOIN with WHERE M.MaintenanceDate IS NULL
 
 ---
 
 ## 🔎 Query Results
 
 **Servers Table Result:**  
-_(Add table or screenshot reference here)_
+SQL_Select_Servers.png
 
 **MaintenanceRecords Table Result:**  
-_(Add table or screenshot reference here)_
+SQL_Select_MaintenanceRecords.png
 
-**Join Query Result:**  
-_(Add table or screenshot reference here)_
+**Left Join Query Result:**  
+SQL_LeftJoin.png
 
----
+**Inner Join Query Result:**  
+SQL_InnerJoin.png
 
-## 📸 Screenshots
-
-1. Servers_Select.png  
-2. MaintenanceRecords_Select.png  
-3. Join_Query.png
-
-(Saved in Week2/Screenshots/)
+**Left Join NULL Query Result:**  
+SQL_LeftJoinNULL.png
 
 ---
 
@@ -91,7 +89,7 @@ Key takeaways:
 - Primary keys and identity columns simplify managing unique records.
 - Foreign keys enforce referential integrity, preventing orphaned records.
 - JOIN queries are essential for retrieving related data across tables.
-- Writing T-SQL queries for data retrieval became more comfortable with practice.
+- You can't use <=> with Null as it is not a value, you must instead use <IS>
 
 I also learned about the Logical Processing Order of an SQL query, and how it affects aliases being declared:
 
@@ -109,7 +107,7 @@ And about JOIN types:
 |Type|	Description|
 |-----|------------|
 |INNER JOIN|	Only shows rows with matches on both sides.|
-|LEFT JOIN|	Shows all rows from the left table, and matching rows from the right — fills in NULLs if there's no match.|
+|LEFT JOIN|	Shows all rows from the left table, and matching rows from the right — returns NULLs for right-side columns when there is no match.|
 |RIGHT JOIN|	Shows all rows from the right table, with matches from the left. (Rarely used)|
 |FULL JOIN|	Shows all rows from both sides — matches where it can, NULLs where it can’t. (Also rare)|
 
