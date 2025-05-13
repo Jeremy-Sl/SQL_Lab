@@ -104,6 +104,15 @@ I also learned about the Logical Processing Order of an SQL query, and how it af
 |5 | SELECT|  
 |6 | ORDER BY|  
 
+And about JOIN types:
+
+|Type|	Description|
+|-----|------------|
+|INNER JOIN|	Only shows rows with matches on both sides.|
+|LEFT JOIN|	Shows all rows from the left table, and matching rows from the right — fills in NULLs if there's no match.|
+|RIGHT JOIN|	Shows all rows from the right table, with matches from the left. (Rarely used)|
+|FULL JOIN|	Shows all rows from both sides — matches where it can, NULLs where it can’t. (Also rare)|
+
 ---
 
 ## 🔗 Files in this folder
