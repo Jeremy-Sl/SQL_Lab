@@ -63,7 +63,7 @@ Output:
 ## 📊 Performance Comparison  
 |Metric	|Before Index	|After Index|
 |------|-----------|-------------|
-|Logical Reads	|9 (MaintenanceRecords), 2 Servers)	|9 (MaintenanceRecords), 2 Servers)|
+|Logical Reads	|9 (MaintenanceRecords), 2 (Servers)	|9 (MaintenanceRecords), 2 (Servers)|
 |Elapsed Time (ms)	|0-1ms	|0-25ms|
 |Execution Plan Observation	|Clustered Index Scan|	NonClustered Index Scan|
 
@@ -75,7 +75,9 @@ Key takeaways:
 - Clustered indexes define row order and improve PK lookups  
 - Non-clustered indexes boost performance on filterable/joinable columns  
 - Composite indexes are powerful for multi-column queries  
-- Indexing transforms costly table scans into efficient index seeks  
+- Indexing transforms costly table scans into efficient index seeks
+
+  Although the index was created and used in the execution plan, performance metrics did not significantly improve. This is expected with small tables, where SQL Server may still prefer scans. In larger datasets, the benefits of indexing would become much more apparent. This exercise helped reinforce how indexing decisions depend heavily on data volume and query patterns.
 
 ## 🔗 Files in this folder
 - Week4_Indexing_Notes.md
