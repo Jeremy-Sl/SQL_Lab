@@ -53,11 +53,6 @@ CREATE NONCLUSTERED INDEX IX_Maintenance_ServerID
 ON MaintenanceRecords (ServerID);
 ```
 
-Index 2: Composite index on ServerID, MaintenanceDate
-```
-CREATE NONCLUSTERED INDEX IX_Maintenance_ServerDate
-ON MaintenanceRecords (ServerID, MaintenanceDate);
-```
 ## 🔁 Post-Index Query Performance  
 Re-run the same query after index creation.
 
@@ -68,9 +63,9 @@ Output:
 ## 📊 Performance Comparison  
 |Metric	|Before Index	|After Index|
 |------|-----------|-------------|
-|Logical Reads	|[e.g., 2500]	|[e.g., 42]|
-|Elapsed Time (ms)	|[e.g., 130]	|[e.g., 7]|
-|Execution Plan Observation	|Table Scan|	Index Seek|
+|Logical Reads	|9 (MaintenanceRecords), 2 Servers)	|9 (MaintenanceRecords), 2 Servers)|
+|Elapsed Time (ms)	|0-1ms	|0-25ms|
+|Execution Plan Observation	|Clustered Index Scan|	NonClustered Index Scan|
 
 ## 📝 Notes & Reflections  
 This week I explored how indexes influence SQL Server performance. I learned how to read execution plans, use SET STATISTICS IO and SET STATISTICS TIME, and apply indexing strategies to reduce resource usage and improve response times.
