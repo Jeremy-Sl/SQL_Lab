@@ -29,7 +29,7 @@
 
 `ALTER DATABASE InventoryDB SET RECOVERY FULL;`  
 
-Screenshot: SQL_Select_RecoveryModel.png
+Screenshot: Select_RecoveryModel.png
 
 ## 🗄️ Backup Types
 |Type	|Purpose	|Notes|
@@ -77,7 +77,7 @@ Screenshot: Backup_Log.png
 `DELETE FROM Servers`   
 `WHERE Hostname = 'DELETED-SVR';`  
 
-✅ Step 4: Restore sequence
+✅ Step 4: Restore sequence  
 Restore full backup:
 
 `RESTORE DATABASE InventoryDB`   
@@ -99,9 +99,9 @@ Restore full backup:
 
 Screenshots:
 
-Restore_Database_Full.png  
-Restore_DataBase_Diff.png  
-Restore_Database_Log.png  
+- Restore_Database_Full.png  
+- Restore_Database_Diff.png  
+- Restore_Database_Log.png  
 
 ## 📝 Notes & Reflections  
 This week I learned how SQL Server handles backup strategies and how recovery models influence what backup types are possible. Setting the recovery model to FULL allowed me to take a full backup, followed by differential and transaction log backups. I simulated a data loss event and successfully restored the database using a combination of backups.
