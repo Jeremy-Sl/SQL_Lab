@@ -44,7 +44,7 @@ Screenshot: SQL_Select_RecoveryModel.png
 `BACKUP DATABASE InventoryDB`  
 `TO DISK = 'C:\Backups\InventoryDB_Full.bak';`  
 
-Screenshot: SQL_Backup_Full.png
+Screenshot: Backup_Full.png
 
 ✅ Differential Backup
 
@@ -52,13 +52,14 @@ Screenshot: SQL_Backup_Full.png
 `TO DISK = 'C:\Backups\InventoryDB_Diff.bak'`   
 `WITH DIFFERENTIAL;`  
 
-Screenshot: SQL_Backup_Diff.png
+Screenshot: Backup_Diff.png
 
 ✅ Transaction Log Backup  
 
 `BACKUP LOG InventoryDB`  
 `TO DISK = 'C:\Backups\InventoryDB_Log.trn';`  
-Screenshot: SQL_Backup_Log.png  
+
+Screenshot: Backup_Log.png  
 
 ## 🔄 Restore Simulation  
 ✅ Step 1: Insert test data
@@ -98,9 +99,9 @@ Restore full backup:
 
 Screenshots:
 
-SQL_Restore_Full.png  
-SQL_Restore_Diff.png  
-SQL_Restore_Log.png  
+Restore_Database_Full.png  
+Restore_DataBase_Diff.png  
+Restore_Database_Log.png  
 
 ## 📝 Notes & Reflections  
 This week I learned how SQL Server handles backup strategies and how recovery models influence what backup types are possible. Setting the recovery model to FULL allowed me to take a full backup, followed by differential and transaction log backups. I simulated a data loss event and successfully restored the database using a combination of backups.
