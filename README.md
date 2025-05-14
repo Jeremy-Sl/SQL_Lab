@@ -24,9 +24,9 @@ The lab is designed to demonstrate practical, hands-on experience with SQL Serve
 | Week | Focus Area | Status |
 |------|------------|--------|
 | 1 | SQL Server architecture, basic T-SQL, database/table creation | ✅ Completed |
-| 2 | Schema design, CRUD operations, and query fundamentals | 🔜 In Progress |
-| 3 | Backup and restore, recovery models, basic indexing | ⏳ Planned |
-| 4 | Indexing strategies and basic performance tuning | ⏳ Planned |
+| 2 | Schema design, CRUD operations, and query fundamentals | ✅ Completed |
+| 3 | Backup and restore, recovery models, basic indexing | ✅ Completed |
+| 4 | Indexing strategies and basic performance tuning | ✅ Completed |
 
 Each week includes:
 - SQL scripts
@@ -39,9 +39,9 @@ Each week includes:
 ## 📂 Week Folders
 
 - [Week 1](Docs/Week%201) — Architecture & Basic Queries *(completed)*
-- Week 2 — Coming soon
-- Week 3 — Coming soon
-- Week 4 — Coming soon
+- [Week 2](Docs/Week%202) — Schema Design, CRUD, and JOINs *(completed)*
+- [Week 3](Docs/Week%203) — Backup & Restore Fundamentals *(completed)*
+- [Week 4](Docs/Week%204) — Indexing & Performance Tuning *(completed)*
 
 ---
 
